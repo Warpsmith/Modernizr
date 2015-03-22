@@ -1,4 +1,4 @@
-define(['ModernizrProto', 'prefixes'], function( ModernizrProto, prefixes ) {
+define(['ModernizrProto', 'cssomPrefixes'], function( ModernizrProto, prefixes ) {
   /**
    * atRule returns a given CSS property at-rule (eg @keyframes), possibly in
    * some prefixed form, or false, in the case of an unsupported rule
@@ -12,6 +12,10 @@ define(['ModernizrProto', 'prefixes'], function( ModernizrProto, prefixes ) {
     var rule;
 
     if (typeof cssrule === 'undefined') {
+      return undefined;
+    }
+
+    if (!prop) {
       return false;
     }
 
